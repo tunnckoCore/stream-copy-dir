@@ -95,7 +95,9 @@
       "once",
       "through2",
       "use",
-      "vinyl"
+      "vinyl",
+      "create-readdir-stream",
+      "write-file"
     ],
     "lint": {
       "reflinks": true

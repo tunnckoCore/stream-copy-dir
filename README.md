@@ -20,6 +20,40 @@ const streamCopyDir = require('stream-copy-dir')
 
 ## API
 
+### [streamCopyDir](index.js#L54)
+> Copy files from `src` to `dest` directory without globs and recursion. Can provide `plugin` function  to modify file contents, which is useful for template engines. The `plugin` function gets two arguments - `file` and `cb`, where `file` is [vinyl][] file and `cb` is optional, but it's recommended to pass the file like so `cb(null, file)`
+
+**Params**
+
+* `<src>` **{String|Buffer}**: source directory with files, passed to [create-readdir-stream][]    
+* `<dest>` **{String|Buffer}**: destination folder for (modified) files, passed to [write-file][]    
+* `[plugin]` **{Function}**: perfect place to access and modify contents of each file    
+* `returns` **{Stream}**: transform stream, [through2][]  
+
+**Example**
+
+```js
+var copyFolder = require('stream-copy-dir')
+var handlebars = require('handlebars')
+
+function plugin (file, cb) {
+  var contents = file.toString()
+  var template = handlebars.compile(contents)
+
+  file.contents = template({
+    name: 'Charlike',
+    baz: 'qux'
+  })
+  cb(null, file)
+}
+
+copyFolder('./src/templates', './my-project', plugin)
+  .once('error', console.error)
+  .once('finish', function () {
+    console.log('copied and modified without errors')
+  })
+```
+
 ## Related
 - [always-done](https://www.npmjs.com/package/always-done): Handle completion and errors with elegance! Support for streams, callbacks, promises, child processes, async/await and sync functions… [more](https://github.com/hybridables/always-done#readme) | [homepage](https://github.com/hybridables/always-done#readme "Handle completion and errors with elegance! Support for streams, callbacks, promises, child processes, async/await and sync functions. A drop-in replacement for [async-done][] - pass 100% of its tests plus more")
 - [callback2stream](https://www.npmjs.com/package/callback2stream): Transform sync, async or generator function to Stream. Correctly handle errors and optional arguments. | [homepage](https://github.com/hybridables/callback2stream#readme "Transform sync, async or generator function to Stream. Correctly handle errors and optional arguments.")
@@ -39,11 +73,13 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 [always-done]: https://github.com/hybridables/always-done
 [async-done]: https://github.com/gulpjs/async-done
 [base]: https://github.com/node-base/base
+[create-readdir-stream]: https://github.com/tunnckocore/create-readdir-stream
 [dezalgo]: https://github.com/npm/dezalgo
 [once]: https://github.com/isaacs/once
 [through2]: https://github.com/rvagg/through2
 [use]: https://github.com/jonschlinkert/use
 [vinyl]: https://github.com/gulpjs/vinyl
+[write-file]: https://github.com/tunnckocore/write-file
 
 [npmjs-url]: https://www.npmjs.com/package/stream-copy-dir
 [npmjs-img]: https://img.shields.io/npm/v/stream-copy-dir.svg?label=stream-copy-dir
