@@ -8,15 +8,13 @@
 'use strict'
 
 var fs = require('fs')
-var Readdir = require('create-readdir-stream').CreateReaddirStream
 var path = require('path')
-var through2 = require('through2')
-var writeFile = require('write-file')
+var utils = require('./utils')
 
 module.exports = function streamCopyDir (src, dest, plugin) {
-  var app = new Readdir()
+  var app = new utils.dir.CreateReaddirStream()
   return app.createReaddirStream(src)
-    .pipe(through2.obj(function (file, enc, cb) {
+    .pipe(utils.through2.obj(function (file, enc, cb) {
       fs.stat(file.path, function (err, stats) {
         /* istanbul ignore next */
         if (err) return cb(err)
@@ -49,7 +47,7 @@ module.exports = function streamCopyDir (src, dest, plugin) {
 
           function end (file) {
             var fp = path.resolve(dest, file.basename)
-            writeFile(fp, file.contents, cb)
+            utils.writeFile(fp, file.contents, cb)
           }
 
           end(file)
