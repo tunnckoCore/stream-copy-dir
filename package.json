@@ -40,7 +40,29 @@
   "files": [
     "index.js"
   ],
-  "keywords": [],
+  "keywords": [
+    "copy",
+    "dest",
+    "destination",
+    "dir",
+    "directory",
+    "dist",
+    "fast",
+    "file",
+    "files",
+    "noglobs",
+    "norecurse",
+    "norecursion",
+    "plugin",
+    "plugins",
+    "pure",
+    "small",
+    "stream",
+    "streaming",
+    "template",
+    "templates",
+    "use"
+  ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
