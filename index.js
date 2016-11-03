@@ -19,6 +19,7 @@ module.exports = function streamCopyDir (src, dest, plugin) {
       fs.stat(file.path, function (err, stats) {
         if (err) return cb(err)
         file.stat = stats
+        file.contents = null
         if (file.stat.isDirectory()) {
           return cb(null, file)
         }
