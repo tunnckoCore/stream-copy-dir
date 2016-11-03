@@ -75,6 +75,26 @@
     "tasks": [
       "readme"
     ],
+    "related": {
+      "list": [
+        "create-readdir-stream",
+        "callback2stream",
+        "always-done",
+        "try-catch-core",
+        "promise2stream",
+        "minibase"
+      ]
+    },
+    "reflinks": [
+      "always-done",
+      "async-done",
+      "base",
+      "dezalgo",
+      "once",
+      "through2",
+      "use",
+      "vinyl"
+    ],
     "lint": {
       "reflinks": true
     }

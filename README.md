@@ -20,6 +20,14 @@ const streamCopyDir = require('stream-copy-dir')
 
 ## API
 
+## Related
+- [always-done](https://www.npmjs.com/package/always-done): Handle completion and errors with elegance! Support for streams, callbacks, promises, child processes, async/await and sync functions… [more](https://github.com/hybridables/always-done#readme) | [homepage](https://github.com/hybridables/always-done#readme "Handle completion and errors with elegance! Support for streams, callbacks, promises, child processes, async/await and sync functions. A drop-in replacement for [async-done][] - pass 100% of its tests plus more")
+- [callback2stream](https://www.npmjs.com/package/callback2stream): Transform sync, async or generator function to Stream. Correctly handle errors and optional arguments. | [homepage](https://github.com/hybridables/callback2stream#readme "Transform sync, async or generator function to Stream. Correctly handle errors and optional arguments.")
+- [create-readdir-stream](https://www.npmjs.com/package/create-readdir-stream): Streaming `fs.readdir`, extensible with smart plugins. No recursion and no globs by default - [use][] plugins. Does… [more](https://github.com/tunnckocore/create-readdir-stream#readme) | [homepage](https://github.com/tunnckocore/create-readdir-stream#readme "Streaming `fs.readdir`, extensible with smart plugins. No recursion and no globs by default - [use][] plugins. Does not stat and doesn't read the filepaths - use plugins. It just push [vinyl][] files to stream. Follows signature and semantics of `fs.creat")
+- [minibase](https://www.npmjs.com/package/minibase): MiniBase is minimalist approach to Base - @node-base, the awesome framework. Foundation for building complex APIs with… [more](https://github.com/node-minibase/minibase#readme) | [homepage](https://github.com/node-minibase/minibase#readme "MiniBase is minimalist approach to Base - @node-base, the awesome framework. Foundation for building complex APIs with small units called plugins. Works well with most of the already existing [base][] plugins.")
+- [promise2stream](https://www.npmjs.com/package/promise2stream): Transform ES2015 Promise to Stream - specifically, Transform Stream using [through2][]. Works in object mode by default… [more](https://github.com/hybridables/promise2stream#readme) | [homepage](https://github.com/hybridables/promise2stream#readme "Transform ES2015 Promise to Stream - specifically, Transform Stream using [through2][]. Works in object mode by default, but you can pass options directly to the [through2][] package.")
+- [try-catch-core](https://www.npmjs.com/package/try-catch-core): Low-level package to handle completion and errors of sync or asynchronous functions, using [once][] and [dezalgo][] libs… [more](https://github.com/hybridables/try-catch-core#readme) | [homepage](https://github.com/hybridables/try-catch-core#readme "Low-level package to handle completion and errors of sync or asynchronous functions, using [once][] and [dezalgo][] libs. Useful for and used in higher-level libs such as [always-done][] to handle completion of anything.")
+
 ## Contributing
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/tunnckoCore/stream-copy-dir/issues/new).  
 But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) guidelines.
@@ -27,6 +35,15 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 ## [Charlike Make Reagent](http://j.mp/1stW47C) [![new message to charlike][new-message-img]][new-message-url] [![freenode #charlike][freenode-img]][freenode-url]
 
 [![tunnckoCore.tk][author-www-img]][author-www-url] [![keybase tunnckoCore][keybase-img]][keybase-url] [![tunnckoCore npm][author-npm-img]][author-npm-url] [![tunnckoCore twitter][author-twitter-img]][author-twitter-url] [![tunnckoCore github][author-github-img]][author-github-url]
+
+[always-done]: https://github.com/hybridables/always-done
+[async-done]: https://github.com/gulpjs/async-done
+[base]: https://github.com/node-base/base
+[dezalgo]: https://github.com/npm/dezalgo
+[once]: https://github.com/isaacs/once
+[through2]: https://github.com/rvagg/through2
+[use]: https://github.com/jonschlinkert/use
+[vinyl]: https://github.com/gulpjs/vinyl
 
 [npmjs-url]: https://www.npmjs.com/package/stream-copy-dir
 [npmjs-img]: https://img.shields.io/npm/v/stream-copy-dir.svg?label=stream-copy-dir
