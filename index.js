@@ -17,14 +17,24 @@ module.exports = function streamCopyDir (src, dest, plugin) {
   return app.createReaddirStream(src)
     .pipe(through2.obj(function (file, enc, cb) {
       fs.stat(file.path, function (err, stats) {
-        if (err) return cb(err)
+        /* istanbul ignore next */
+        if (err) {
+          return cb(err)
+        }
+
         file.stat = stats
         file.contents = null
+
         if (file.stat.isDirectory()) {
           return cb(null, file)
         }
+
         fs.readFile(file.path, function (err, str) {
-          if (err) return cb(err)
+          /* istanbul ignore next */
+          if (err) {
+            return cb(err)
+          }
+
           file.contents = str
 
           if (typeof plugin === 'function') {
