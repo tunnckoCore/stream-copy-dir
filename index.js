@@ -57,8 +57,3 @@ module.exports = function streamCopyDir (src, dest, plugin) {
       })
     }))
 }
-
-// streamCopyDir('./', '../foo/bar/baz', function (file) {
-//   var str = file.contents.toString().replace('{foo}', 'ba222aaareee!')
-//   file.contents = new Buffer(str)
-// })
