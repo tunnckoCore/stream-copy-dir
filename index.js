@@ -30,10 +30,16 @@ var utils = require('./utils')
  *   var contents = file.toString()
  *   var template = handlebars.compile(contents)
  *
- *   file.contents = template({
+ *   contents = template({
  *     name: 'Charlike',
  *     baz: 'qux'
  *   })
+ *
+ *   // Buffer constructor is deprecated
+ *   // so don't use `new Buffer` anymore in new code/projects
+ *   // instead use `Buffer.from`
+ *   file.contents = new Buffer(contents)
+ *
  *   cb(null, file)
  * }
  *

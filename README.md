@@ -20,7 +20,7 @@ const streamCopyDir = require('stream-copy-dir')
 
 ## API
 
-### [streamCopyDir](index.js#L54)
+### [streamCopyDir](index.js#L60)
 > Copy files from `src` to `dest` directory without globs and recursion. Can provide `plugin` function  to modify file contents, which is useful for template engines. The `plugin` function gets two arguments - `file` and `cb`, where `file` is [vinyl][] file and `cb` is optional, but it's recommended to pass the file like so `cb(null, file)`
 
 **Params**
@@ -40,10 +40,16 @@ function plugin (file, cb) {
   var contents = file.toString()
   var template = handlebars.compile(contents)
 
-  file.contents = template({
+  contents = template({
     name: 'Charlike',
     baz: 'qux'
   })
+
+  // Buffer constructor is deprecated
+  // so don't use `new Buffer` anymore in new code/projects
+  // instead use `Buffer.from`
+  file.contents = new Buffer(contents)
+
   cb(null, file)
 }
 
