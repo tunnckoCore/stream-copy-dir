@@ -1,7 +1,7 @@
 {
   "name": "stream-copy-dir",
   "version": "0.2.0",
-  "description": "Streaming copy of directory to destination - no globs and no recursion",
+  "description": "Streaming copy of directory to destination - no globs and no recursion. In addition can pass a 'plugin' function to modify the contents of each file - perfect place for template engines.",
   "repository": "tunnckoCore/stream-copy-dir",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",
   "precommit.silent": true,
